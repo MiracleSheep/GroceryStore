@@ -26,6 +26,7 @@ public class Games extends Department{
     //constructor goes here
     public Games(String name, float price, int quantity, short rating) {
         goodsPurchased ++;
+        totalCreated++;
         this.strname = name;
         this.price = price;
         this.quantity = quantity;
@@ -36,6 +37,7 @@ public class Games extends Department{
     //default constructor goes here
     public Games() {
         goodsPurchased ++;
+        totalCreated++;
         this.strname = "Undefined";
         this.price = (float) 0.00;
         this.quantity = 0;
