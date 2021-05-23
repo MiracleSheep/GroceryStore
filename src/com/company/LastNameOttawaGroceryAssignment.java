@@ -48,7 +48,41 @@ public class LastNameOttawaGroceryAssignment {
         //making a loop that allows the user to enter multiple grocery items
         while (groceryItemList == false) {
 
+               //declaring a variable called dowhileloop for a true or false
+        boolean doWhileLoop = false;
 
+       //declaring a variable that will return the input
+
+        //Prompting the user to enter the grocery store
+        System.out.println("Would you like to enter a grocery item?");
+        //asking for input
+        System.out.println("Press 1 for yes and 2 for no");
+
+        //creating loop for input
+        while (doWhileLoop == false) {
+
+            //making try catch statement
+            try {
+
+                //getting input
+                getInput = new Scanner(System.in).nextByte();
+                doWhileLoop = true;
+
+            } catch (Exception e) {
+
+                //asking user to try again
+                System.out.println("That was incorrect input. Please try again");
+                doWhileLoop = false;
+
+            }
+
+            //checking if getInput is not equal to one or two
+            if (getInput != 2 && getInput != 1) {
+                System.out.println("That was incorrect input. Please try again");
+                doWhileLoop = false;
+            }
+
+        }
 
             //checking if the user wants to add another item to the grocery list
             if (getInput == 1) {
@@ -434,45 +468,10 @@ public class LastNameOttawaGroceryAssignment {
         }
     }
 
-    //Here is a method that asks if you would like to add an item to the shopping list
 
-    public boolean newItem() {
-       //declaring a variable called dowhileloop for a true or false
-        boolean doWhileLoop = false;
 
-       //declaring a variable that will return the input
 
-        //Prompting the user to enter the grocery store
-        System.out.println("Would you like to enter a grocery item?");
-        //asking for input
-        System.out.println("Press 1 for yes and 2 for no");
-
-        //creating loop for input
-        while (doWhileLoop == false) {
-
-            //making try catch statement
-            try {
-
-                //getting input
-                getInput = new Scanner(System.in).nextByte();
-                doWhileLoop = true;
-
-            } catch (Exception e) {
-
-                //asking user to try again
-                System.out.println("That was incorrect input. Please try again");
-                doWhileLoop = false;
-
-            }
-
-            //checking if getInput is not equal to one or two
-            if (getInput != 2 && getInput != 1) {
-                System.out.println("That was incorrect input. Please try again");
-                doWhileLoop = false;
-            }
-
-        }
-    }
+    
 
 
     }
