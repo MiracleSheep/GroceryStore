@@ -71,6 +71,8 @@ public class LastNameOttawaGroceryAssignment {
 
             } else if (getInput == 2) {
 
+
+
                 //if the user wants to update an item
                 updateItem();
 
@@ -584,6 +586,7 @@ public class LastNameOttawaGroceryAssignment {
 
     }
 
+
     //this method is responsible for outputting all the items you bought and calculating the price with tax
     static void calculatePrice() {
 
@@ -643,6 +646,7 @@ public class LastNameOttawaGroceryAssignment {
 
 
         }
+
 
 
         //outputting the price with tax
