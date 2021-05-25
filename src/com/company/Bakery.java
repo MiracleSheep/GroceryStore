@@ -73,7 +73,7 @@ public class Bakery extends Department{
 
         //declaring a variable that will determine how many days are added to the current date
         //tehre is no option for byte so it was to be int
-        int n = rand.nextInt() + 1;
+        int n = rand.nextInt(50) + 1;
 
         //creating code for a random expiry date within fifty days from the day of creating the item
         Date today = new Date();
