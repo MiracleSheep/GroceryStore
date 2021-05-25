@@ -9,12 +9,15 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Random;
 
 public class Bakery extends Department{
 
     //instance variables unique to Bakery past here:
     //Bakery items are food, they should have an expiry date.
-    private String strExpiryDate;
+    private Date expiryDate;
 
     //Static variable of class Games
     //An integer that stores the number of products purchased
@@ -24,14 +27,15 @@ public class Bakery extends Department{
     public static ArrayList<Bakery> bakeryArrayList = new ArrayList<Bakery>();
 
     //constructor goes here
-    public Bakery(String name, float price, int quantity, String expiryDate) {
+    public Bakery(String name, float price, int quantity) {
         //Assigning the values of the parameters to the instance variables
         this.strname = name;
         this.price = price;
         this.quantity = quantity;
-        this.strExpiryDate = expiryDate;
+        setExpiryDate();
         setTotalPrice();
         goodsPurchased ++;
+        totalCreated++;
     }
 
     //default constructor goes here
@@ -39,20 +43,21 @@ public class Bakery extends Department{
         this.strname = "Undefined";
         this.price = (float) 0.00;
         this.quantity = 0;
-        this.strExpiryDate = "Undefined";
+        setExpiryDate();
         setTotalPrice();
         goodsPurchased ++;
+        totalCreated++;
     }
 
     //creating toString method
     public String toString() {
-        return (this.strname + " " + this.price + " " + this.quantity + " " + this.totalPrice + " " + this.strExpiryDate + " " + goodsPurchased);
+        return (this.strname + " " + this.price + " " + this.quantity + " " + this.totalPrice + " " + this.expiryDate + " " + goodsPurchased);
     }
 
     //get methods go here
 
     //returns the expiry date
-    public String getExpiryDate() { return (this.strExpiryDate); }
+    public Date getExpiryDate() { return (this.expiryDate); }
 
     //returns the number of unique products purchased
     public static int getGoodsPurchased() {
@@ -62,7 +67,25 @@ public class Bakery extends Department{
     //set methods go here
 
     //sets expiry date
-    public void setExpiryDate(String strExpiryDate) { this.strExpiryDate = strExpiryDate;}
+    public void setExpiryDate() {
+        //creating random opbject
+        Random rand = new Random();
+
+        //declaring a variable that will determine how many days are added to the current date
+        //tehre is no option for byte so it was to be int
+        int n = rand.nextInt(50) + 1;
+
+        //creating code for a random expiry date within fifty days from the day of creating the item
+        Date today = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(today);
+        cal.add(Calendar.DAY_OF_MONTH, n);
+
+        //setting expiry date to correct time
+        this.expiryDate = cal.getTime();
+
+
+    }
 
 
 

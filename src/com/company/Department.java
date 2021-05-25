@@ -14,6 +14,9 @@ public class Department {
 
     //Creating instance variables of class bakery
 
+    //there will be a total products created number which will be static
+    protected static int totalCreated;
+
     //Each product will have a name
     protected String strname;
 
@@ -67,6 +70,9 @@ public class Department {
     public float getTotalPrice() {
         return (this.totalPrice);
     }
+
+    //returns the total number of department objects created
+    public static int getTotalCreated() {return(totalCreated);}
 
 
     //set methods go here
