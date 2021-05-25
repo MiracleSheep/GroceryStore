@@ -651,6 +651,7 @@ public class LastNameOttawaGroceryAssignment {
 
         //outputting the price with tax
         System.out.println("The total price of all these items is " + priceWithTax + "$.");
+        System.out.println("The tax is " + (priceWithTax * 0.13) + "$.");
         System.out.println("The total price with tax is " + (priceWithTax * 1.13) + "$.");
         System.out.println("Enjoy your purchase!");
 
